@@ -4,7 +4,7 @@ A visualization demonstration based on [dc.js](https://dc-js.github.io/dc.js/) a
 
 Data derived from [excellent animation](http://afpakpolio.droppages.com/) of cases and genetic links based on Arie Voorman's [epiviz package](https://github.com/avoorman/epiviz).
 
-+++ Getting Started
+###Getting Started
 
 To view this dashboard in a local browser, one need to have the [Flask python package](http://flask.pocoo.org/) installed, either directly on your machine or in a [virtual environment](http://flask.pocoo.org/docs/0.10/installation/).
 
