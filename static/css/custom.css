@@ -1,0 +1,5 @@
+#country-chart g.row text {fill: black;}
+
+#map-chart path {stroke: darkgray; stroke-width: 0.5px}
+
+#map-chart g.deselected path {fill: lightgrey;}

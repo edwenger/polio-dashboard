@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IDM Afghan-Pakistan Polio Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="./static/lib/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="./static/lib/css/keen-dashboards.css" />
+  <link rel="stylesheet" type="text/css" href="./static/lib/css/dc.css" />
+  <link rel="stylesheet" type="text/css" href="./static/lib/css/colorbrewer.css" />
+  <link rel="stylesheet" type="text/css" href="./static/css/custom.css" />
+</head>
+
+<body class="application">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+     <div class="container-fluid">
+       <div class="navbar-header">
+         <a class="navbar-brand" href="./">Afghan-Pakistan Polio Dashboard</a>
+       </div>
+       <div class="navbar-collapse collapse">
+       </div>
+     </div>
+   </div>
+
+   <div class="container-fluid">
+     <div class="row">
+
+       <div class="col-sm-12">
+         <div class="chart-wrapper">
+           <div class="chart-title">
+             WPV1 from AFP reporting
+           </div>
+           <div class="chart-stage">
+             <div id="map-chart"></div>
+             <div id="age-chart"></div>
+             <div id="doses-chart"></div>
+             <div id="cluster-chart"></div>
+             <div id="country-chart"></div>
+             <div id="time-chart"></div>
+           </div>
+           <div class="chart-notes">
+             Click on the different charts to filter on different variables.
+           </div>
+         </div>
+       </div>
+
+     </div>
+
+     <hr>
+
+     <p class="small text-muted">Built with &#9829; by <a href="https://keen.io">Keen IO</a></p>
+
+   </div>
+
+  <script src="./static/lib/js/jquery.min.js"></script>
+  <script src="./static/lib/js/bootstrap.min.js"></script>
+  <script src="./static/lib/js/crossfilter.js"></script>
+  <script src="./static/lib/js/d3.js"></script>
+  <script src="./static/lib/js/dc.js"></script>
+  <script src="./static/lib/js/queue.js"></script>
+  <script src="./static/lib/js/holder.js"></script>
+  <script src="./static/lib/js/keen.min.js"></script>
+  <script src="./static/lib/js/colorbrewer.js"></script>
+  <script src='./static/js/graphs.js' type='text/javascript'></script>
+
+</body>
+</html>
