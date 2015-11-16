@@ -6,6 +6,6 @@ Data derived from [excellent animation](http://afpakpolio.droppages.com/) of cas
 
 ###Getting Started
 
-To view this dashboard in a local browser, one need to have the [Flask python package](http://flask.pocoo.org/) installed, either directly on your machine or in a [virtual environment](http://flask.pocoo.org/docs/0.10/installation/).
+To view this dashboard in a local browser, one need to have the [Flask python package](http://flask.pocoo.org/) installed, either directly on your machine or in a [virtual environment](http://flask.pocoo.org/docs/0.10/installation/).  Parsing the csv file is handled by the `pandas` python package, which can either be built from source or downloaded as a [pre-built binary](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pandas) along with its dependencies.
 
 Then one simply need to run `python app.py` and point a browser to `http://localhost:5000`.
