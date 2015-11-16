@@ -112,7 +112,8 @@ function makeGraphs(error, polioRecordsJson, districtsJson) {
       .height(580)
       .dimension(districtDim)
       .group(numRecordsByDistrict)
-      .colors(colorbrewer.Blues[9])
+      //.colors(colorbrewer.Blues[9])
+      .colors(d3.scale.linear().range(["#d9d9d9", "#d9d9d9", "#f7fbff", "#08306b"]))
       .overlayGeoJson(districtsJson.features, "district", function (d) {
         return d.properties.name;
       })
@@ -128,10 +129,10 @@ function makeGraphs(error, polioRecordsJson, districtsJson) {
       })
 
       mapChart.on("preRender", function(chart) {
-          chart.colorDomain(d3.extent(chart.data(), chart.valueAccessor()));
+          chart.colorDomain([0, 0.99, 1, d3.extent(chart.data(), chart.valueAccessor())[1]]);
       });
       mapChart.on("preRedraw", function(chart) {
-          chart.colorDomain(d3.extent(chart.data(), chart.valueAccessor()));
+          chart.colorDomain([0, 0.99, 1, d3.extent(chart.data(), chart.valueAccessor())[1]]);
       });
 
 
