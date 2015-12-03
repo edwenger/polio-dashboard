@@ -1,14 +1,20 @@
 queue()
-    .defer(d3.json, "/polio_records")
+    .defer(d3.csv, "static/data/afpak_cases_with_genetics.csv")
     .defer(d3.json, "static/geojson/afpak.geojson")
     .await(makeGraphs);
 
-function makeGraphs(error, polioRecordsJson, districtsJson) {
+function toTitleCase(str)
+{
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+
+function makeGraphs(error, polioRecordsCsv, districtsJson) {
 
     //Clean polio records data
-	var polioRecords = polioRecordsJson;
+	var polioRecords = polioRecordsCsv;
     var dateFormat = d3.time.format("%Y-%m-%d");
 	polioRecords.forEach(function(d) {
+        d.district = toTitleCase(d.district); // KHYBER --> Khyber
         d.onset = dateFormat.parse(d.onset);
         d.onset.setDate(1); // group on month
         d.age = Math.floor(d.age / 12) // months --> years
@@ -44,10 +50,10 @@ function makeGraphs(error, polioRecordsJson, districtsJson) {
     //Charts
     var ageChart = dc.barChart("#age-chart");
     var dosesChart = dc.barChart("#doses-chart");
-    var clusterChart = dc.pieChart("#cluster-chart")
-    var timeChart = dc.lineChart("#time-chart")
+    var clusterChart = dc.pieChart("#cluster-chart");
+    var timeChart = dc.lineChart("#time-chart");
     var mapChart = dc.geoChoroplethChart("#map-chart");
-    var countryChart = dc.rowChart("#country-chart")
+    var countryChart = dc.rowChart("#country-chart");
 
     ageChart
       .x(d3.scale.linear().domain([0, 8]))
